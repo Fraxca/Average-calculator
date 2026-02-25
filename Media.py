@@ -26,6 +26,14 @@ def media_anual(m1, m2, m3, m4):
         print("Reprovado! Sua média anual é:", media)
     return media
 
+#quanto falta para passar
+def quanto_falta_para_passar(media):
+    if media >= 5:
+        print("Parabéns! Você já passou!")
+    else:
+        falta = 5 - media
+        print("Faltam", falta, "pontos para você passar.")
+
 #chamada das funções
 while True:
     print("Calculadora de Média Bimestral")
@@ -33,7 +41,8 @@ while True:
     print("Deseja calcular a média bimestral ou anual?")
     print("1 - Média Bimestral")
     print("2 - Média Anual")
-    print("3 - Sair")
+    print("3 - Quanto falta para passar?")
+    print("4 - Sair")
 
     opcao = int(input("Escolha uma opção: "))
 
@@ -42,6 +51,9 @@ while True:
     elif opcao == 2:
         media_anual(0, 0, 0, 0)
     elif opcao == 3:
+        media = calcular_media_bimestral()  
+        quanto_falta_para_passar(media)
+    elif opcao == 4:
         print("Saindo...")
         break
     else:
